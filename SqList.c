@@ -5,6 +5,7 @@ typedef struct{
 }SqList;
 /**
     顺序表
+    顺序表从1开始，数组从0开始
 **/
 //前插法
 bool ListInsert(SqList &L,int i,ElemType e){
@@ -38,6 +39,18 @@ bool ListDelete(SqList &L,int i,ElemType &e){
 }
 //best:O(1);agv:O(n);worst:O(n)
 
+//tip：修改操作用引用，查找操作不用
+//按值查找
+int LocateElem(SqList L,ElemType e){
+    for(int i = 0;i<L.length;i++){
+        if(L.data[i] == e){
+            return i+1;//返回顺序表标号
+        }
+    }
+    return 0;
+}
+//best:O(1);agv:O(n);worst:O(n)
+    
 
 
 
